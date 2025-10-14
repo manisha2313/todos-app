@@ -33,7 +33,7 @@ function App() {
         </div>
 
         {/* Todo List placeholder */}
-        <div>
+        <div>{/*list of todos */ }
           {todos.length === 0 ? (
             <p className="text-gray-500 text-center italic">No tasks yet 😴</p>
           ) : (
