@@ -13,6 +13,9 @@ function App() {
     setTodos([...todos, newtodo]) // Add new todo immutably
     setTask("") //clear input
   }
+  const handleDelete = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center">
       <h1 className="text-3xl font-bold text-blue-600 mt-10">Todo App</h1>
@@ -44,6 +47,10 @@ function App() {
                   className="flex justify-between items-center border-b py-2"
                 >
                   <span>{todo.text}</span>
+                  <div className="flex gap-5">
+                  <button onClick={()=> handleDelete(todo.id)} className="outline-solid p-1">Delete</button>
+                  <input type="checkbox"></input>
+                  </div>
                 </li>
               ))}
             </ul>
